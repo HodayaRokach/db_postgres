@@ -1,0 +1,28 @@
+name: Python Linting
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🛠 Checkout code
+        uses: actions/checkout@v2
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'  # You can specify the Python version you need
+
+      - name: ➕ Install Ruff
+        run: pip install ruff
+
+      - name: 🔍 Run Ruff Linter
+        run: ruff . --format text
