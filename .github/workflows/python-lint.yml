@@ -1,4 +1,4 @@
-name: Python Linting
+name: Ruff Lint Check
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
       - name: 🐍 Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.12'  # You can specify the Python version you need
+          python-version: '3.11'  # Specify the Python version you need
 
       - name: ➕ Install Ruff
         run: pip install ruff
