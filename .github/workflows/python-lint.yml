@@ -25,4 +25,4 @@ jobs:
         run: pip install ruff
 
       - name: 🔍 Run Ruff Linter
-        run: ruff . --format text
+        run: ruff check .
